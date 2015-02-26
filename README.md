@@ -1,6 +1,4 @@
-vagrant-hyakuju
---
-
+# vagrant-hyakuju
 健康長寿プロジェクトのローカル開発環境仮想マシンのリポジトリ
 
 ## 事前にインストールが必要なもの
@@ -16,7 +14,6 @@ vagrant-hyakuju
 ## ローカル環境構築手順
 1. 開発環境構築用のリポジトリをクローン
 1. 仮想マシンの立ち上げ
-1. SSH設定
 1. 疎通確認
 
 ### リポジトリのクローン
@@ -27,20 +24,17 @@ vagrant-hyakuju
     $ cd vagrant-hyakuju
     $ vagrant up
 
-### SSH設定
-    $ vagrant ssh-config web --host 192.168.110.10 >> ~/.ssh/config
-    $ vagrant ssh-config db --host 192.168.110.20 >> ~/.ssh/config
-
 ### 疎通確認
-    $ ansible -i stage all -m ping
-    192.168.110.20 | success >> {
-        "changed": false,
-        "ping": "pong"
-    }
+    $ vagrant ssh web
+    Last login: Fri Aug  1 09:45:51 2014 from 10.0.2.2
+    [vagrant@www ~]$ exit
+    ログアウト
+    Connection to 127.0.0.1 closed.
 
-    192.168.110.10 | success >> {
-        "changed": false,
-        "ping": "pong"
-    }
+    $ vagrant ssh db
+    Last login: Fri Aug  1 09:45:51 2014 from 10.0.2.2
+    [vagrant@db ~]$ exit
+    ログアウト
+    Connection to 127.0.0.1 closed.
 
 以上。
