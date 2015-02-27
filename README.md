@@ -7,9 +7,17 @@
 
 公式サイトを見ればインストールできるはず
 
+### vagrant-vbguestのインストール
+    $ vagrant plugin install vagrant-vbguest
+
 ### インストール確認
     $ vagrant --version
     Vagrant 1.6.5
+
+    $ vagrant plugin list
+    vagrant-login (1.0.1, system)
+    vagrant-share (1.1.3, system)
+    vagrant-vbguest (0.10.0)
 
 ## ローカル環境構築手順
 1. 開発環境構築用のリポジトリをクローン
